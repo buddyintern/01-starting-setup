@@ -1,9 +1,9 @@
-import classes from './ProductItem.modal.css'
+import "./ProductItem.modal.css";
 
 function ProductItem(props){
     return(
         <div>
-            <img src={props.image} alt={props.title}></img>
+            <img className="img" src={props.image} alt={props.title}></img>
             <h5>{props.title}</h5>
             <p>{props.description}</p>
             <h6>${props.price}</h6>

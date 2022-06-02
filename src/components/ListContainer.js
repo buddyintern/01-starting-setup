@@ -14,8 +14,7 @@ function ListContainer(){
 
   function handleFetch(){    
     axios({
-      
-        url: "http://localhost:3000/testbuddy/ILyoSau_pd",
+        url: "https://buddybackendheb2022.herokuapp.com/testbuddy/ILyoSau_pd",
       method: "GET",
       })
       .then((res) => {
