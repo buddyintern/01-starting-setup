@@ -1,7 +1,7 @@
 import ProductList from "./ProductList";
 import {useState, useEffect} from "react"
 import axios from 'axios';
-
+import './ListContainer.modal.css'
 
 
 function ListContainer(){
@@ -25,7 +25,7 @@ function ListContainer(){
 
 
     return (
-        <div>
+        <div className="container">
             <ProductList list={list}/>
         </div>
     )

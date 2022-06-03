@@ -2,11 +2,11 @@ import "./ProductItem.modal.css";
 
 function ProductItem(props){
     return(
-        <div>
+        <div className="product">
             <img className="img" src={props.image} alt={props.title}></img>
-            <h5>{props.title}</h5>
+            <h3>{props.title}</h3>
             <p>{props.description}</p>
-            <h6>${props.price}</h6>
+            <h6 className="price">${props.price}</h6>
         </div>
     )
 }

@@ -1,4 +1,38 @@
-img {
-    max-width: 200px;
-    max-height: 400px;
-}
+.product img{
+    height: 25rem;
+ }
+
+ .product:hover img{
+    transform: scale(.9);
+ }
+
+.product{
+    text-align: center;
+    padding:3rem 2rem;
+    background: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    outline: .1rem solid #ccc;
+    outline-offset: -1.5rem;
+    cursor: pointer;
+ }
+
+ .product:hover{
+    outline: .2rem solid #222;
+    outline-offset: 0;
+ }
+
+
+ .product h3{
+    padding:.5rem 0;
+    font-size: 2rem;
+    color:#444;
+ }
+
+ .product:hover h3{
+    color:#27ae60;
+ }
+
+ .product .price{
+    font-size: 2rem;
+    color:#444;
+ }
