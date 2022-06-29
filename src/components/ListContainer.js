@@ -14,7 +14,7 @@ function ListContainer() {
 
 
     handleFetch();
-    const socket = openSocket("http://localhost:3000");
+    const socket = openSocket("https://buddybackendheb2022.herokuapp.com/");
     socket.on("new product added", (data) => {
       //console.log(data);
       console.log(list)
