@@ -26,9 +26,9 @@ function ListContainer() {
   }, [list]);
 
   function handleFetch() {
-    // https://buddybackendheb2022.herokuapp.com
+    // http://localhost:3000/testbuddy/ILyoSau_pd
     axios({
-      url: "http://localhost:3000/testbuddy/ILyoSau_pd",
+      url: "https://buddybackendheb2022.herokuapp.com/testbuddy/ILyoSau_pd",
       method: "GET",
     }).then((res) => {
       setList(res.data.data);
