@@ -2,19 +2,19 @@ import ProductList from "./ProductList";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./ListContainer.modal.css";
-const io = require('socket.io-client');
-const socket = io('https://buddybackendheb2022.herokuapp.com/');
-
+import openSocket from "socket.io-client";
 
 function ListContainer() {
   const [list, setList] = useState([]);
 
+  
 
   useEffect(() => {
 
 
 
     handleFetch();
+    const socket = openSocket("https://buddybackendheb2022.herokuapp.com/");
     socket.on("new product added", (data) => {
       //console.log(data);
       console.log(list)
@@ -26,9 +26,9 @@ function ListContainer() {
   }, [list]);
 
   function handleFetch() {
-    // http://localhost:3000/testbuddy/ILyoSau_pd
+    // https://buddybackendheb2022.herokuapp.com
     axios({
-      url: "https://buddybackendheb2022.herokuapp.com/testbuddy/ILyoSau_pd",
+      url: "http://localhost:3000/testbuddy/ILyoSau_pd",
       method: "GET",
     }).then((res) => {
       setList(res.data.data);
