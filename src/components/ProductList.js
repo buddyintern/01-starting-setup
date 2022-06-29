@@ -7,8 +7,8 @@ function ProductList(props) {
     <div>
       <h3 className="title">{props.list.title}</h3>
       <div className="products-container">
-        {props.list.products &&
-          props.list.products.map((product) => {
+        {props.list &&
+          props.list.map((product) => {
             return (
               <ProductItem
                 key={product._id}

@@ -2,44 +2,43 @@ import ProductList from "./ProductList";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./ListContainer.modal.css";
-import openSocket from "socket.io-client";
 
-function ListContainer() {
+function ListContainer({socket}) {
   const [list, setList] = useState([]);
-
-  
+  const [products, setProducts] = useState([])
 
   useEffect(() => {
-
-
-
+    async function handleFetch() {
+      // https://buddybackendheb2022.herokuapp.com
+      axios({
+        url: "https://buddybackendheb2022.herokuapp.com/testbuddy/ILyoSau_pd",
+        method: "GET",
+      }).then((res) => {
+        setList(res.data.data);
+        setProducts(res.data.data.products)
+        // console.log(res.data.data);
+      });
+    }
     handleFetch();
-    const socket = openSocket("https://buddybackendheb2022.herokuapp.com/");
-    socket.on("new product added", (data) => {
-      //console.log(data);
-      console.log(list)
-    });
-
-
-
-
-  }, [list]);
-
-  function handleFetch() {
-    // https://buddybackendheb2022.herokuapp.com
-    axios({
-      url: "http://localhost:3000/testbuddy/ILyoSau_pd",
-      method: "GET",
-    }).then((res) => {
-      setList(res.data.data);
-      // console.log(res.data.data);
-    });
-  }
+  }, [])
   
+  useEffect(() => {
+
+    socket.emit('connection')
+
+    socket.on("new product added", (data) => {
+      setProducts([...products, data])
+      console.log(data)
+      });
+
+  }) 
+
+
 
   return (
     <div className="container">
-      <ProductList list={list} />
+      <ProductList list={products}/>
+      {products?products.map(x => <h1 key={x.title}>{x.title}</h1>):"loading"}
     </div>
   );
 }
