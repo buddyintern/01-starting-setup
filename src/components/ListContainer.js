@@ -2,12 +2,12 @@ import ProductList from "./ProductList";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./ListContainer.modal.css";
-import openSocket from "socket.io-client";
+const io = require('socket.io-client');
+const socket = io('https://buddybackendheb2022.herokuapp.com/');
+
 
 function ListContainer() {
   const [list, setList] = useState([]);
-
-  const socket = openSocket("https://buddybackendheb2022.herokuapp.com/");
 
 
   useEffect(() => {
