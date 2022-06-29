@@ -1,5 +1,5 @@
 .product img{
-    height: 25rem;
+    height: 15rem;
  }
 
  .product:hover img{
@@ -8,7 +8,11 @@
 
 .product{
     text-align: center;
-    padding:3rem 2rem;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:10px;
+    padding-right:10px;
+    padding:3rem;
     background: #fff;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
     outline: .1rem solid #ccc;
