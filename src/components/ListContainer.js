@@ -7,14 +7,14 @@ import openSocket from "socket.io-client";
 function ListContainer() {
   const [list, setList] = useState([]);
 
-  
+  const socket = openSocket("https://buddybackendheb2022.herokuapp.com/");
+
 
   useEffect(() => {
 
 
 
     handleFetch();
-    const socket = openSocket("https://buddybackendheb2022.herokuapp.com/");
     socket.on("new product added", (data) => {
       //console.log(data);
       console.log(list)
