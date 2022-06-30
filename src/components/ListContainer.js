@@ -2,10 +2,16 @@ import ProductList from "./ProductList";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./ListContainer.modal.css";
+import Confetti from 'react-confetti'
+import useWindowSize from 'react-use/lib/useWindowSize'
+
 
 function ListContainer({socket}) {
   const [list, setList] = useState([]);
   const [products, setProducts] = useState([])
+  const { width, height } = useWindowSize()
+  
+
 
   useEffect(() => {
     async function handleFetch() {
@@ -28,7 +34,8 @@ function ListContainer({socket}) {
 
     socket.on("new product added", (data) => {
       setProducts([...products, data])
-      console.log(data)
+      window.scrollTo(0, window.document.body.scrollHeight);
+
       });
 
   }) 
@@ -38,8 +45,13 @@ function ListContainer({socket}) {
   return (
     <div className="container">
       <ProductList list={products}/>
-      {products?products.map(x => <h1 key={x.title}>{x.title}</h1>):"loading"}
+      <Confetti
+      width={width}
+      height={height}
+    />
+
     </div>
+    
   );
 }
 
