@@ -2,14 +2,14 @@ import ProductList from "./ProductList";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./ListContainer.modal.css";
-import Confetti from 'react-confetti'
-import useWindowSize from 'react-use/lib/useWindowSize'
+// import Confetti from 'react-confetti'
+// import useWindowSize from 'react-use/lib/useWindowSize'
 
 
 function ListContainer({socket}) {
   const [list, setList] = useState([]);
   const [products, setProducts] = useState([])
-  const { width, height } = useWindowSize()
+  // const { width, height } = useWindowSize()
   
 
 
@@ -44,11 +44,11 @@ function ListContainer({socket}) {
 
   return (
     <div className="container">
-      <ProductList list={products}/>
-      <Confetti
+      <ProductList list={products} className={list}/>
+      {/* <Confetti
       width={width}
       height={height}
-    />
+    /> */}
 
     </div>
     

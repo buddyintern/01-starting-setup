@@ -13,8 +13,9 @@ class ProductSocket {
     onProductAdded() {
         this.socket.on("new product added", (data) => {
             //console.log(data);
-            console.log(list)
           });
     }
 
 }
+
+export default ProductSocket
