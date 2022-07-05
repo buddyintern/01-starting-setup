@@ -1,11 +1,12 @@
-import { QRCodeSVG } from "qrcode.react";
+// import { QRCodeSVG } from "qrcode.react";
 import ProductItem from "./ProductItem";
 
 import "./ProductList.modal.css";
 function ProductList(props) {
   return (
     <div>
-      <h3 className="title">{props.list.title}</h3>
+      {/* <h3 className="title">{props.list.title}</h3> */}
+      <h3 className="title">HEB Shopping List</h3>
       <div className="products-container">
         {props.list &&
           props.list.map((product) => {
@@ -21,10 +22,10 @@ function ProductList(props) {
           })}
       </div>
 
-      <div className="qrcode">
+      {/* <div className="qrcode">
         <QRCodeSVG value={props.list._id} />
         <h6>List was created at {props.list.createdAt}</h6>
-      </div>
+      </div> */}
     </div>
   );
 }
