@@ -6,7 +6,7 @@ function ProductItem(props){
             <img className="img" src={props.image} alt={props.title}></img>
             <h3>{props.title}</h3>
             <p>{props.description}</p>
-            <h6 className="price">${props.price}</h6>
+            <h6 className="price">Price: {props.price}</h6>
         </div>
     )
 }
