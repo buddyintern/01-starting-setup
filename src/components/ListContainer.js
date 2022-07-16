@@ -12,9 +12,6 @@ function ListContainer({ socket }) {
   const [visible, setVisible] = useState(false);
   // const { width, height } = useWindowSize()
 
-  function setVisible(visible){
-    return !visible
-  }
 
   useEffect(() => {
     async function handleFetch() {
