@@ -16,7 +16,11 @@ function Login({stateChanger}) {
     {
       username: "user2",
       password: "pass2"
-    }
+    },
+    {
+        username: "",
+        password: ""
+      }
   ];
 
   const errors = {
@@ -69,7 +73,7 @@ function Login({stateChanger}) {
           {renderErrorMessage("pass")}
         </div>
         <div className="button-container">
-          <input type="submit" />
+          <input type="submit" value="Sign In" />
         </div>
       </form>
     </div>
@@ -78,8 +82,9 @@ function Login({stateChanger}) {
   return (
     <div className="login">
       <div className="login-form">
-        <div className="title">Sign In To Your HEB Account</div>
+        <div className="title" style={{color: "black"}}>Sign In To Your HEB Account</div>
         {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+        <button style={{align: "center"}} onClick={handleSubmit} >TRY DEMO</button>
       </div>
     </div>
   );
