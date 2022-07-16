@@ -12,6 +12,10 @@ function ListContainer({ socket }) {
   const [visible, setVisible] = useState(false);
   // const { width, height } = useWindowSize()
 
+  function setVisible(visible){
+    return !visible
+  }
+
   useEffect(() => {
     async function handleFetch() {
       // https://buddybackendheb2022.herokuapp.com
@@ -39,7 +43,7 @@ function ListContainer({ socket }) {
   if (visible) {
     return (
       <div className="container">
-        <ProductList list={products} className={list} />
+        <ProductList list={products} className={list} stateChanger={setVisible} />
       </div>
     );
   }

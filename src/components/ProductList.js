@@ -3,10 +3,25 @@ import ProductItem from "./ProductItem";
 
 import "./ProductList.modal.css";
 function ProductList(props) {
+
+
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
+
   return (
     <div>
       {/* <h3 className="title">{props.list.title}</h3> */}
-      <h3 className="title">HEB Shopping List</h3>
+      <div class="container-fluid p-0 mb-4">
+        <div class="text-center">
+          <h3 className="title" class="d-inline text-light p-3">
+            HEB Shopping List
+          </h3>
+          <button class="d-inline float-right btn-sm btn-light pull-right text-right" onClick={refreshPage}>Log out</button>
+        </div>
+      </div>
+
       <div className="products-container">
         {props.list &&
           props.list.map((product) => {
