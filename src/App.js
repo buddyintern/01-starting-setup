@@ -2,6 +2,7 @@ import ListContainer from "./components/ListContainer";
 import React from 'react'
 import { useState, useEffect } from "react";
 import openSocket from "socket.io-client";
+import "./index.css"
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
 
 
   return (
-    <div background-color="red">
+    <div className="appbg">
       {socket?<ListContainer socket={socket}/>:<p>loading</p>}
     </div>
   );
