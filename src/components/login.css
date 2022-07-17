@@ -7,7 +7,7 @@
     gap: 20px;
     height: 100vh;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    background-color: red;
+    background-color: #DC2A1D;
   }
   
   input[type="text"],
@@ -46,7 +46,7 @@
   }
   
   .error {
-    color: red;
+    color: DC2A1D;
     font-size: 12px;
   }
   
